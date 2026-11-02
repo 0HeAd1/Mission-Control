@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.11.12328.437
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RouteEngineUI", "frontend\RouteEngineUI.csproj", "{472BEA3B-044A-C141-0193-347474C12721}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RouteEngine", "backend\RouteEngine\RouteEngine.csproj", "{AEF3FDCA-EF54-BAA1-B1F8-B981583D2A24}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{472BEA3B-044A-C141-0193-347474C12721}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{472BEA3B-044A-C141-0193-347474C12721}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{472BEA3B-044A-C141-0193-347474C12721}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{472BEA3B-044A-C141-0193-347474C12721}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEF3FDCA-EF54-BAA1-B1F8-B981583D2A24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEF3FDCA-EF54-BAA1-B1F8-B981583D2A24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEF3FDCA-EF54-BAA1-B1F8-B981583D2A24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEF3FDCA-EF54-BAA1-B1F8-B981583D2A24}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CF95D784-3441-4980-A049-16642CB098B8}
+	EndGlobalSection
+EndGlobal

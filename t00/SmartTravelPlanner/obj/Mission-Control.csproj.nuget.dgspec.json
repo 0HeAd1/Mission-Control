@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Campus_projects\\Mission-Control\\Mission-Control.csproj": {}
+    "C:\\Campus_projects\\Mission-Control\\t00\\SmartTravelPlanner\\Mission-Control.csproj": {}
   },
   "projects": {
-    "C:\\Campus_projects\\Mission-Control\\Mission-Control.csproj": {
+    "C:\\Campus_projects\\Mission-Control\\t00\\SmartTravelPlanner\\Mission-Control.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Campus_projects\\Mission-Control\\Mission-Control.csproj",
+        "projectUniqueName": "C:\\Campus_projects\\Mission-Control\\t00\\SmartTravelPlanner\\Mission-Control.csproj",
         "projectName": "Mission-Control",
-        "projectPath": "C:\\Campus_projects\\Mission-Control\\Mission-Control.csproj",
+        "projectPath": "C:\\Campus_projects\\Mission-Control\\t00\\SmartTravelPlanner\\Mission-Control.csproj",
         "packagesPath": "C:\\Users\\maksi\\.nuget\\packages\\",
-        "outputPath": "C:\\Campus_projects\\Mission-Control\\obj\\",
+        "outputPath": "C:\\Campus_projects\\Mission-Control\\t00\\SmartTravelPlanner\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\maksi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\maksi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -61,7 +63,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.403/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
