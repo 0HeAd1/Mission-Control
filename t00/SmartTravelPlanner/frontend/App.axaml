@@ -3,13 +3,98 @@
              x:Class="RouteEngineUI.App"
              xmlns:local="using:RouteEngineUI"
              RequestedThemeVariant="Default">
-             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+    <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
     <Application.DataTemplates>
         <local:ViewLocator />
     </Application.DataTemplates>
 
+    <!-- Idk how to do it but main collor of the window is #070707-->
     <Application.Styles>
+        <!-- Basic Theme-->
         <FluentTheme />
+
+        <!-- Plane -->
+        <Style Selector="Border.dd-panel">
+            <Setter Property="Background" Value="#111111"/>
+            <Setter Property="BorderBrush" Value="#5C4D32"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Padding" Value="18"/>
+            <Setter Property="BoxShadow" Value="0 6 16 2 #000000"/>
+        </Style>
+
+        <!-- Header -->
+        <Style Selector="TextBlock.dd-header" >
+            <Setter Property="Foreground" Value="#C2A366"/>
+            <Setter Property="FontFamily" Value="Georgia, Times New Roman, serif"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="LetterSpacing" Value="2"/>
+            <Setter Property="Margin" Value="0,0,0,12"/>
+        </Style>
+
+        <!-- Plain Text-->
+        <Style Selector="TextBlock.dd-tblcok">
+            <Setter Property="Foreground" Value="#A69F91"/>
+            <Setter Property="FontFamily" Value="Georgia, serif"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Margin" Value="0,0,0,5"/>
+        </Style>
+
+        <!-- TextBox -->
+        <Style Selector="TextBox.dd-tbox">
+            <Setter Property="Background" Value="#050505"/>
+            <Setter Property="Foreground" Value="#E8E4D9"/>
+            <Setter Property="BorderBrush" Value="#3D3830"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Padding" Value="10,8"/>
+            <Setter Property="FontFamily" Value="Consolas, monospace"/>
+            <Setter Property= "CaretBrush" Value="#8A0B0B"/>
+        </Style>
+        <Style Selector="TextBox.dd-tbox:pointerover">
+            <Setter Property="BorderBrush" Value="#7A6542"/>
+            <Setter Property="Background" Value="#080808"/>
+        </Style>
+        <Style Selector="TextBox.dd-tbox:focus">
+            <Setter Property="BorderBrush" Value="#8A0B0B"/>
+            <Setter Property="Background" Value="#0A0505"/>
+        </Style>
+
+        <!-- Buttons -->
+        <Style Selector="Button.dd-btn">
+            <Setter Property="Background" Value="#161412"/>
+            <Setter Property="Foreground" Value="#D8D0C5"/>
+            <Setter Property="BorderBrush" Value="#5C4D32"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Padding" Value="16,10"/>
+            <Setter Property="FontFamily" Value="Georgia, serif"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="HorizontalContentAlignment" Value= "Center"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        </Style>
+        <Style Selector="Button.dd-btn:pointerover">
+            <Setter Property="Background" Value="#6E0A0A"/>
+            <Setter Property="Foreground" Value="#FFFFFF"/>
+            <Setter Property="BorderBrush" Value="#C2A366"/>
+        </Style>
+        <Style Selector="Button.dd-btn:pressed">
+            <Setter Property="Background" Value="#3B0404"/>
+            <Setter Property="BorderBrush" Value="#8A0B0B"/>
+        </Style>
+        <Style Selector="Button.dd-btn-primary">
+            <Setter Property="Background" Value="#4A0606"/>
+            <Setter Property="Foreground" Value="#E8E4D9"/>
+            <Setter Property="BorderBrush" Value="#8A0B0B"/>
+        </Style>
+
+        <!-- ListBox -->
+        <Style Selector="ListBox.dd-list">
+            <Setter Property="Background" Value="#080808"/>
+            <Setter Property="Foreground" Value="#D8D0C5"/>
+            <Setter Property="BorderBrush" Value="#3D3830"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="FontFamily" Value="Georgia, serif"/>
+        </Style>
+
     </Application.Styles>
 </Application>

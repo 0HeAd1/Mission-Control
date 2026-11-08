@@ -11,12 +11,17 @@
 
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainViewModel />
     </Design.DataContext>
 
-    <TextBox Text="{Binding ResultMessage}"
-             HorizontalAlignment="Center"
-             VerticalAlignment="Center" />
+    <Grid Background="#070707">
+        <Border Classes="dd-panel"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Width="400">
+
+        </Border>
+    </Grid>
 
 </Window>
