@@ -7,6 +7,7 @@
         x:Class="RouteEngineUI.Views.MainWindow"
         x:DataType="vm:MainViewModel"
         Icon="/Assets/avalonia-logo.ico"
+        Background="#070707"
         Title="RouteEngineUI">
 
     <Design.DataContext>
@@ -15,13 +16,77 @@
         <vm:MainViewModel />
     </Design.DataContext>
 
-    <Grid Background="#070707">
-        <Border Classes="dd-panel"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Width="400">
+    <Grid RowDefinitions="Auto, *, Auto, Auto">
+        <Border Grid.Row="0" BorderBrush="#8A0B0B" BorderThickness="0,0,0,2" Padding="3,0,3,3" Margin="3,0,0,3">
+            <Grid ColumnDefinitions="*, Auto">
+                <StackPanel>
+                    <TextBlock Classes="dd-header">SEARCH THE DUNGEON PATH</TextBlock>
+                    <TextBlock Classes="dd-tblock" Foreground="#6E6659" FontStyle="Italic">"Find the right path in so abssense of light"</TextBlock>
+                </StackPanel>
+                <Button Grid.Column="1" Classes="dd-btn" Content="LOAD THE MAP (.txt)" Width="250" VerticalAlignment="Center" />
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="1" ColumnDefinitions="350 25 *">
+            <Border Grid.Column="0" Classes="dd-panel">
+                <StackPanel Spacing="14">
+
+                    <TextBlock Classes="dd-header" Text="I. SAY YOUR NAME!"/>
+
+                    <StackPanel>
+                        <TextBlock Classes="dd-tblock" Text="Dungeoner name:"/>
+                        <TextBox Classes="dd-tbox" PlaceholderText="e.g. Arkadiy, Maksym" />
+                    </StackPanel>
+
+                    <StackPanel>
+                        <TextBlock Classes="dd-tblock" Text="Current city: "/>
+                        <TextBox Classes="dd-tbox" PlaceholderText="e.g. Kyiv, Athens" />
+                    </StackPanel>
+
+                    <Separator Height="2" Margin="5"/>
+
+                    <TextBlock Classes="dd-header" Text="II. SAY YOUR DESINATION!"/>
+
+                    <StackPanel>
+                        <TextBlock Classes="dd-tblock" Text="Destination:"/>
+                        <TextBox Classes="dd-tbox" PlaceholderText="e.g. Kharkiv, Wonderland" />
+                    </StackPanel>
+
+                    <Button Grid.Column="1" Classes="dd-btn" Content="PLAN THE FIGHT" Margin="0,10,0,0"></Button>
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Column="2" Classes="dd-panel">
+                <Grid RowDefinitions="Auto, *, Auto" >
+                    <TextBlock Grid.Row="0" Classes="dd-header" Text="III. EXPEDITION HISTORY"/>
+
+                    <ListBox Grid.Row="1" Classes="dd-list" Margin="0,0,0,20"/>
+
+                    <Border Grid.Row="2"  Background="#080808" BorderBrush="#5C4D32" BorderThickness="1" Padding="14" VerticalAlignment="Center">
+                        <Grid ColumnDefinitions="*, Auto">
+                            <TextBlock Classes="dd-tblock" Text="TOTAL DIST: " VerticalAlignment="Center"/>
+
+                            <TextBlock Grid.Column="1" Classes="dd-header" Text="will be added soon" VerticalAlignment="Center"/>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Border>
+
+        </Grid>
+
+        <!--TODO ADD AN INTERESTING ERROR HANDLER-->
+        <Border Grid.Row="2" IsVisible="False">
 
         </Border>
+
+
+        <Grid Grid.Row="3"  ColumnDefinitions="*, 10, *, 10, *, 10, *" Margin="0,20,0,0">
+            <Button Grid.Column="0" Classes="dd-btn" Content="SAVE AS .JSON" />
+            <Button Grid.Column="2" Classes="dd-btn" Content="LOAD .JSON" />
+            <Button Grid.Column="4" Classes="dd-btn" Content="CLEAR ROUTE" />
+            <Button Grid.Column="6" Classes="dd-btn" Content="ABANDON" />
+        </Grid>
     </Grid>
+
 
 </Window>

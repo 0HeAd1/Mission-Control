@@ -34,7 +34,7 @@
         </Style>
 
         <!-- Plain Text-->
-        <Style Selector="TextBlock.dd-tblcok">
+        <Style Selector="TextBlock.dd-tblock">
             <Setter Property="Foreground" Value="#A69F91"/>
             <Setter Property="FontFamily" Value="Georgia, serif"/>
             <Setter Property="FontSize" Value="13"/>
@@ -51,11 +51,11 @@
             <Setter Property="FontFamily" Value="Consolas, monospace"/>
             <Setter Property= "CaretBrush" Value="#8A0B0B"/>
         </Style>
-        <Style Selector="TextBox.dd-tbox:pointerover">
+        <Style Selector="TextBox.dd-tbox:pointerover /template/ Border#PART_BorderElement">
             <Setter Property="BorderBrush" Value="#7A6542"/>
             <Setter Property="Background" Value="#080808"/>
         </Style>
-        <Style Selector="TextBox.dd-tbox:focus">
+        <Style Selector="TextBox.dd-tbox:focus /template/ Border#PART_BorderElement">
             <Setter Property="BorderBrush" Value="#8A0B0B"/>
             <Setter Property="Background" Value="#0A0505"/>
         </Style>
@@ -71,13 +71,14 @@
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="HorizontalContentAlignment" Value= "Center"/>
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="CornerRadius" Value="0"/>
         </Style>
-        <Style Selector="Button.dd-btn:pointerover">
+        <Style Selector="Button.dd-btn:pointerover /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="Background" Value="#6E0A0A"/>
             <Setter Property="Foreground" Value="#FFFFFF"/>
             <Setter Property="BorderBrush" Value="#C2A366"/>
         </Style>
-        <Style Selector="Button.dd-btn:pressed">
+        <Style Selector="Button.dd-btn:pressed /template/ ContentPresenter#PART_ContentPresenter" >
             <Setter Property="Background" Value="#3B0404"/>
             <Setter Property="BorderBrush" Value="#8A0B0B"/>
         </Style>
