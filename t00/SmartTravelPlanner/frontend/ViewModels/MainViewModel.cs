@@ -22,7 +22,7 @@ public partial class MainViewModel : ViewModelBase
     private string _destination = "";
 
     [ObservableProperty]
-    private string _resultMessage = "Welcome Home, Such As It Is. This Squalid Hamlet, These Corrupted Lands, They Are Yours Now, And You Are Bound To Them.";
+    private string _resultMessage = "Welcome Home, Such As It Is. These Corrupted Lands, They Are Yours Now, And You Are Bound To Them.";
     //Brigands have run of these lanes. Keep to the side path; the Hamlet is just ahead [another variant]
 
     [RelayCommand]
