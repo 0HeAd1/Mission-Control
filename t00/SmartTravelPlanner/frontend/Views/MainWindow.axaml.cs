@@ -111,7 +111,7 @@ public partial class MainWindow : Window
             RouteList.ItemsSource = null;
             DistanceText.Text = "0 km";
 
-            AfflictionText.Text = "Path obscured. No valid route found in the current Realm.";
+            AfflictionText.Text = "Path obscured. No valid route found in the current Realm";
             AfflictionBanner.IsVisible = true;
         }
     }
@@ -220,5 +220,29 @@ public partial class MainWindow : Window
     private void OnAbandonClick(object? sender, RoutedEventArgs e)
     {
         this.Close();
+    }
+
+    private async void OnEditMapClick(object? sender, RoutedEventArgs e)
+    {
+        if (_map == null)
+        {
+            AfflictionText.Text = "Load a Realm Map (.txt) first!";
+            AfflictionBanner.IsVisible = true;
+            return;
+        }
+
+        AfflictionBanner.IsVisible = false;
+
+        var editor = new MapEditorWindow(_map);
+
+        await editor.ShowDialog(this);
+
+        if (editor.HasChanges)
+        {
+            _traveler.ClearRoute();
+            RouteList.ItemsSource = null;
+            DistanceText.Text = "0 km";
+        }
+
     }
 }

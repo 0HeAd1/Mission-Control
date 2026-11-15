@@ -8,7 +8,7 @@
         x:DataType="vm:MainViewModel"
         Icon="/Assets/avalonia-logo.ico"
         Background="#070707"
-        Title="RouteEngineUI">
+        Title="SmartTravelPlanner">
 
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
@@ -18,12 +18,13 @@
 
     <Grid RowDefinitions="Auto, *, Auto, Auto">
         <Border Grid.Row="0" BorderBrush="#8A0B0B" BorderThickness="0,0,0,2" Padding="3,0,3,3" Margin="3,0,0,3">
-            <Grid ColumnDefinitions="*, Auto">
+            <Grid ColumnDefinitions="*, Auto, 10, Auto">
                 <StackPanel>
                     <TextBlock Classes="dd-header">SEARCH THE DUNGEON PATH</TextBlock>
                     <TextBlock Classes="dd-tblock" Foreground="#6E6659" FontStyle="Italic">"Find the right path in so abssense of light"</TextBlock>
                 </StackPanel>
                 <Button Grid.Column="1" Classes="dd-btn" Content="LOAD THE MAP (.txt)" Width="250" VerticalAlignment="Center" Click="OnLoadMapClick" />
+                <Button Grid.Column="3" Classes="dd-btn" Content="EDIT MAP" Margin="0,0,16,0" VerticalAlignment="Center" Click="OnEditMapClick" />
             </Grid>
         </Border>
 

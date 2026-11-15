@@ -1,3 +1,6 @@
+using System.Linq.Expressions;
+using System.Runtime.CompilerServices;
+
 namespace Travelling
 {
     public class CityGraph
@@ -12,9 +15,93 @@ namespace Travelling
                 this.distance = distance;
             }
         }
-        private Dictionary<String, List<Way>>? adjacencyList;
+        private Dictionary<String, List<Way>>? adjacencyList = new();
 
         private string? initial_input;
+
+        public List<string> GetMap()
+        {
+            var map = new List<string>();
+            var used = new List<string>();
+
+            foreach (var city in adjacencyList)
+            {
+                foreach (var way in city.Value)
+                {
+                    if (!used.Contains(way.destination))
+                    {
+                        map.Add($"{city.Key} -> {way.destination}, {way.distance} km");
+                    }
+                }
+                used.Add(city.Key);
+            }
+            return map;
+        }
+
+        public void AddConnection(string fromCity, string toCity, int dist)
+        {
+            if (string.IsNullOrWhiteSpace(fromCity) || string.IsNullOrWhiteSpace(toCity))
+            {
+                throw new Exception("Enter both cities properly");
+            }
+
+            if (dist <= 0)
+            {
+                throw new Exception("Distance must be greater than 0");
+            }
+
+            fromCity = fromCity.Trim();
+            toCity = toCity.Trim();
+
+            string from1 = fromCity[0..1].ToUpper() + fromCity[1..];
+            string to1 = toCity[0..1].ToUpper() + toCity[1..];
+
+            if (from1 == to1)
+            {
+                throw new Exception("Cities must be different");
+            }
+
+            if (!adjacencyList.ContainsKey(from1))
+            {
+                adjacencyList[from1] = new List<Way>();
+            }
+            if (!adjacencyList.ContainsKey(to1))
+            {
+                adjacencyList[to1] = new List<Way>();
+            }
+            RemoveConnection(from1, to1);
+
+            adjacencyList[from1].Add(new Way(to1, dist));
+            adjacencyList[to1].Add(new Way(from1, dist));
+
+        }
+
+        public bool RemoveConnection(string fromCity, string toCity)
+        {
+            if (string.IsNullOrWhiteSpace(fromCity) || string.IsNullOrWhiteSpace(toCity))
+            {
+                throw new Exception("Enter both cities properly");
+            }
+
+            fromCity = fromCity.Trim();
+            toCity = toCity.Trim();
+
+            string from1 = fromCity[0..1].ToUpper() + fromCity[1..];
+            string to1 = toCity[0..1].ToUpper() + toCity[1..];
+
+            int removed = 0;
+
+            if (adjacencyList.ContainsKey(from1))
+            {
+                removed += adjacencyList[from1].RemoveAll(way => way.destination == to1);
+            }
+            if (adjacencyList.ContainsKey(to1))
+            {
+                removed += adjacencyList[to1].RemoveAll(way => way.destination == from1);
+            }
+
+            return removed > 0;
+        }
 
         public int GetPathDistance(List<string> path)
         {
@@ -60,6 +147,7 @@ namespace Travelling
             }
             return Distance;
         }
+
         public List<string> FindShortestPath(string from, string to)
         {
             List<string> res_lst = new List<string>();
@@ -101,7 +189,7 @@ namespace Travelling
                         temp_city = elem;
                     }
                 }
-                if (distance_dict[temp_city] == int.MaxValue)
+                if (temp_num == int.MaxValue)
                     break;
                 if (temp_city == to1)
                 {
