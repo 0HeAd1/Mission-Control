@@ -1,19 +1,19 @@
-namespace Travelling 
-{   
-    public class Logger<T> 
+namespace Travelling
+{
+    public class Logger<T>
     {
         private List<T> saved_data = new List<T>();
-    
+
         public void Add(T entry)
         {
             saved_data.Add(entry);
-        } 
+        }
 
         public void Flush(string filePath)
         {
             for (int i = 0; i < saved_data.Count; ++i)
-            {   
-                File.AppendAllText(filePath, saved_data[i] + "\n");   
+            {
+                File.AppendAllText(filePath, saved_data[i] + "\n");
             }
             saved_data.Clear();
         }
